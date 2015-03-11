@@ -2,27 +2,34 @@
 #define Q_H_
 #include "tcb.h"
 
-TCB_t* NewItem(int v)
+struct q_element
 {
-	TCB_t* temp = (TCB_t*)malloc(sizeof(TCB_t));
+    struct q_element* prev;
+    struct q_element* next;
+    int value;
+};
+
+struct q_element* NewItem(int v)
+{
+    struct q_element* temp = (struct q_element*)malloc(sizeof(struct q_element));
     temp->prev = NULL;
     temp->next = NULL;
-    
+    temp->value = v;
     return temp;
 }
 
-void InitQueue(TCB_t ** head)
+void InitQueue(struct q_element** head)
 {
     *head = NULL;
 }
 
-void AddQueue(TCB_t** head, TCB_t* item)
+void AddQueue(struct q_element** head, struct q_element* item)
 {
     if (*head == NULL)
         *head = item;
     else
     {
-        TCB_t* temp = *head;
+        struct q_element* temp = *head;
 
         while (temp->next != NULL)
             temp = temp->next;
@@ -32,13 +39,13 @@ void AddQueue(TCB_t** head, TCB_t* item)
     }
 }
 
-TCB_t* DelQueue(TCB_t** head)
+struct q_element* DelQueue(struct q_element** head)
 {
     if (*head == NULL)
         return NULL;
     else
     {
-        TCB_t* temp = *head;
+        struct q_element* temp = *head;
         *head = temp->next;
         temp->next = NULL;
         temp->prev = NULL;
@@ -46,7 +53,7 @@ TCB_t* DelQueue(TCB_t** head)
     }
 }
 
-void RotateQ(TCB_t** head)
+void RotateQ(struct q_element** head)
 {
     AddQueue(head, DelQueue(head));
 }
