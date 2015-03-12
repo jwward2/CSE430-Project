@@ -2,12 +2,15 @@
 
 void start_thread(void (*function)())
 {
+	
 }
 
 void run()
 {
+	
 }
 
 void yield()
 {
+	
 }

@@ -4,7 +4,7 @@ void function_1()
 {
 	while(1)
 	{
-		
+		yield();
 	}
 }
 
@@ -12,7 +12,7 @@ void function_1()
 {
 	while(1)
 	{
-		
+		yield();
 	}
 }
 
@@ -20,7 +20,7 @@ void function_3()
 {
 	while (1)
 	{
-		
+		yield();
 	}
 }
 
@@ -28,7 +28,7 @@ void function_4()
 {
 	while(1)
 	{
-		
+		yield();
 	}
 	
 }
