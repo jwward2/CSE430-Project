@@ -1,6 +1,7 @@
 #ifndef Q_H_
 #define Q_H_
 #include "tcb.h"
+#include <stdlib.h>
 
 TCB_t* NewItem(int v)
 {
