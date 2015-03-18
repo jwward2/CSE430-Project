@@ -1,3 +1,9 @@
+//CSE430
+//Project #2
+//-----------------
+// Jacob Ward
+// Joshua Stark
+
 #include "threads.h"
 #include <unistd.h>
 #include <stdio.h>
