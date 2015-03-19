@@ -3,7 +3,7 @@
 #include "tcb.h"
 #include <stdlib.h>
 
-TCB_t* NewItem(int v)
+TCB_t* NewItem()
 {
 	TCB_t* temp = (TCB_t*)malloc(sizeof(TCB_t));
     temp->prev = NULL;
