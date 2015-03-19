@@ -11,6 +11,8 @@
 
 int fibonacciA;
 int fibonacciB;
+int x;
+int y;
 
 //This function shows the current time since the process began
 void function_clock()
@@ -31,29 +33,55 @@ void function_fibonacci()
     while(1)
     {
         int localResult = fibonacciA + fibonacciB;
-	fibonacciB = fibonacciA;
-	fibonacciA = localResult;
+		fibonacciB = fibonacciA;
+		fibonacciA = localResult;
         printf("Fibonacci mumbles aloud %d.\n", localResult);
         sleep(1);
         yield();
     }
 }
 
+//This function displays the factorial of the current value of the two gloal variables x and y.
 void function_3()
 {
     while (1)
     {
-        printf("Hello I'm function 3!\n");
+		int x_current;
+		int y_current;
+		int z, fact = 1;
+		
+		for (z = 1; z <= x; z++)
+		{
+			fact = fact * z;
+		}
+		
+		x_current = fact;
+		
+		fact = 1;
+		
+		for (z = 1; z <= y; z++)
+		{
+			fact = fact * z;
+		}
+		
+		y_current = fact;
+		
+        printf("Current facotiral of x is %d\n", x_current);
+        printf("Current factorial of y is %d\n", y_current);
         sleep(1);
         yield();
     }
 }
 
+//This function increments the two global variables x and y
 void function_4()
 {
     while(1)
     {
-        printf("Hello I'm function 4!\n");
+		x++;
+		y++;
+        printf("Global Variable x is %d\n", x);
+        printf("Global Variable y is %d\n", y);
         sleep(1);
         yield();
     }
