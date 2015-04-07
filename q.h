@@ -52,4 +52,17 @@ void RotateQ(TCB_t** head)
     AddQueue(head, DelQueue(head));
 }
 
+int QueueSize(TCB_t* head)
+{
+    int count = 0;
+    
+    while (head != NULL)
+    {
+	count++;
+	head = head->next;
+    }
+    
+    return count;
+}
+
 #endif // Q_H_
